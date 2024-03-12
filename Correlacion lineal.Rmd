@@ -133,18 +133,18 @@ En una relación lineal, los cambios en una variable están linealmente relacion
 ```{r echo= TRUE}
 library(ggplot2)
 
-x <- 1:50
-y <- 2*x + rnorm(50, mean = 0, sd = 10)
+talla_pantalon <- 1:50
+anchura_cadera <- 2*talla_pantalon + rnorm(50, mean = 0, sd = 10)
 
-df_lineal <- data.frame(x, y)
+df_lineal <- data.frame(talla_pantalon, anchura_cadera)
 
-ggplot(df_lineal, aes(x = x, y = y)) +
+ggplot(df_lineal, aes(x = talla_pantalon,y  = anchura_cadera)) +
   geom_point() + 
   geom_smooth(method = "lm", se = FALSE) +
-  labs(x = "Variable X", y = "Variable Y") +
-  ggtitle("Relación Lineal entre Variables X y Y")
+  labs(x = "Talla de pantalón", y = "Anchura de la cadera") +
+  ggtitle("Relación Lineal entre Variables Talla de pantalón y Anchura de la cadera")
 ```
-Una relación monótona indica una tendencia en la que siempre se cumple que cada vez que los valores de una variable aumentan, los valores de la otra variable siempre aumentan o siempre disminuyen, aunque no tiene porqué ser en la misma proporción constante. En este caso la relación podría coincidir en que puede ser lineal o no tiene porqué.
+Una relación monótona indica una tendencia en la que siempre se cumple que cada vez que los valores de una variable aumentan, los valores de la otra variable siempre aumentan o siempre disminuyen, aunque no tiene porqué ser en la misma proporción constante. En este caso la relación podría coincidir en que puede ser lineal o no tiene porqué. En el caso oplanteado de tallas de pantalón y anchuras de cadera, sí que es lineal, ya que a más talla de pantalón, mayor anchura de cadera, pero un aumento proporcional.
 
 ```{r echo=TRUE}
 x <- c(1, 2, 3, 4, 5)
